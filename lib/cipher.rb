@@ -2,9 +2,13 @@ class Cipher
   ALPHABET = ('A'..'Z').to_a # => ['A', 'B', 'C', ...]
 
   def self.vigenere(keyword, text)
+    #grabbed keyword for shift alphabets
     deciphered_keyword = caesar_guess(keyword)
 
-    solution
+    #puts "keyword: " + keyword + "\n\n"
+    #puts text
+    puts deciphered_keyword
+    #solution
   end
 
   # Solve a Caesar cipher with a given offset

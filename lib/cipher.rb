@@ -5,10 +5,13 @@ class Cipher
     #grabbed keyword for shift alphabets
     deciphered_keyword = caesar_guess(keyword)
 
-    #puts "keyword: " + keyword + "\n\n"
-    #puts text
-    puts deciphered_keyword
-    #solution
+    test = deciphered_keyword.chars
+
+    #this gives us the first letter in cowards
+    #caesar("I", ALPHABET.index(test[0]))
+
+
+
   end
 
   # Solve a Caesar cipher with a given offset

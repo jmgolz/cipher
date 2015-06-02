@@ -38,8 +38,14 @@ class CipherTest < MiniTest::Test
   end
 
   def test_simple_vigenere_cipher
+<<<<<<< Updated upstream
     #puts "working on test vignere simple\n\n"
     #keyword, text = @simple_cipher.split("\n\n")
+=======
+    puts "working on test vignere simple\n\n"
+    keyword, text = @simple_cipher.split("\n\n")
+    Cipher.vigenere(keyword, text)
+>>>>>>> Stashed changes
     #assert_equal @simple_output, Cipher.vigenere(keyword, text)
   end
 

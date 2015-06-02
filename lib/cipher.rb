@@ -5,12 +5,22 @@ class Cipher
     #grabbed keyword for shift alphabets
     deciphered_keyword = caesar_guess(keyword)
 
-    test = deciphered_keyword.chars
+    puts deciphered_keyword
+    solution = ""
 
-    #this gives us the first letter in cowards
-    #caesar("I", ALPHABET.index(test[0]))
+    text.chars {|char|
+      if !ALPHABET.include?(char)
+        puts "Got skippable char: #{char}"
+        solution << char
+        deciphered_keyword = caesar_guess(keyword)
+          puts "Got skippable char: #{char}, array reads: #{deciphered_keyword[0]}"
+        next
+      end
 
-
+      solution << caesar(char, ALPHABET.index(deciphered_keyword[0]))
+      deciphered_keyword = deciphered_keyword.chars.rotate!.join
+    }
+    puts "#{solution}"
 
   end
 

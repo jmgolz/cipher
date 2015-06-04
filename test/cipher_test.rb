@@ -43,8 +43,9 @@ class CipherTest < MiniTest::Test
   end
 
   def test_complex_vigenere_cipher
-    #keyword, text = @complex_cipher.split("\n\n")
-    # @complex_ouput = ... YOUR SOLUTION
-    #assert_equal @complex_output, Cipher.vigenere(keyword, text)
+    keyword, text = @complex_cipher.split("\n\n")
+
+    @complex_output = Cipher.vigenere(keyword, text)
+    assert_equal @complex_output, Cipher.vigenere(keyword, text)
   end
 end

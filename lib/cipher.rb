@@ -5,22 +5,23 @@ class Cipher
     #grabbed keyword for shift alphabets
     deciphered_keyword = caesar_guess(keyword)
 
-    puts deciphered_keyword
+    #puts deciphered_keyword
     solution = ""
 
     text.chars {|char|
-      if !ALPHABET.include?(char)
-        puts "Got skippable char: #{char}"
+      #if !ALPHABET.include?(char)
+      if char[/[\s[:punct:]]/]
+        #puts "Got skippable char: #{char}"
         solution << char
-        deciphered_keyword = caesar_guess(keyword)
-          puts "Got skippable char: #{char}, array reads: #{deciphered_keyword[0]}"
+        #deciphered_keyword = caesar_guess(keyword)
+          #puts "Got skippable char: #{char}, array reads: #{deciphered_keyword[0]}"
         next
       end
 
       solution << caesar(char, ALPHABET.index(deciphered_keyword[0]))
       deciphered_keyword = deciphered_keyword.chars.rotate!.join
     }
-    puts "#{solution}"
+    puts "the solution: \n#{solution}END SOLUTION"
 
   end
 

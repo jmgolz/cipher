@@ -10,19 +10,19 @@ class Cipher
 
     text.chars {|char|
       #if !ALPHABET.include?(char)
-      if char[/[\s[:punct:]]/]
+      if char[/[\s[:punct:]\n]/]
         #puts "Got skippable char: #{char}"
         solution << char
         #deciphered_keyword = caesar_guess(keyword)
-          #puts "Got skippable char: #{char}, array reads: #{deciphered_keyword[0]}"
+          #puts "Got skippable char: #{char}"
         next
       end
-
-      solution << caesar(char, ALPHABET.index(deciphered_keyword[0]))
-      deciphered_keyword = deciphered_keyword.chars.rotate!.join
+        solution += caesar(char, ALPHABET.index(deciphered_keyword[0]))
+        deciphered_keyword = deciphered_keyword.chars.rotate!.join
+        #puts solution
     }
-    puts "the solution: \n#{solution}END SOLUTION"
-    return solution
+    #puts "the solution: \n#{solution}END SOLUTION"
+    return solution.chomp
   end
 
   # Solve a Caesar cipher with a given offset
@@ -33,7 +33,7 @@ class Cipher
       if ALPHABET.include?(char)  #   if the character is in the alphabet
         ALPHABET[key.index(char)] #     find the where it is in the key, use that to look it up in the alphabet
       else                        #   otherwise
-        char                      #     just turn the character (it must be a space, punctuation, etc.)
+        char                      #     just turn the character (it must be a space, punctuatifirefon, etc.)
       end                         #
     }.join                        # join the mapped characters back together as a string
   end

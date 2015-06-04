@@ -22,7 +22,7 @@ class Cipher
       deciphered_keyword = deciphered_keyword.chars.rotate!.join
     }
     puts "the solution: \n#{solution}END SOLUTION"
-
+    return solution
   end
 
   # Solve a Caesar cipher with a given offset

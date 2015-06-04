@@ -19,29 +19,29 @@ class CipherTest < MiniTest::Test
     assert_equal output, Cipher.caesar(cipher, 3)
   end
 
-  # def test_word_is_english
-  #   assert Cipher.is_english?("APPLE")
-  # end
+  def test_word_is_english
+    assert Cipher.is_english?("APPLE")
+  end
 
-  # def test_word_is_not_english
-  #   refute Cipher.is_english?("GUCQY")
-  # end
+  def test_word_is_not_english
+    refute Cipher.is_english?("GUCQY")
+  end
 
-  # def test_discovering_a_ceasar_cipher_without_knowing_the_offset
-  #   assert_equal "GARDEN", Cipher.caesar_guess("RLCOPY")
-  # end
+  def test_discovering_a_ceasar_cipher_without_knowing_the_offset
+    assert_equal "GARDEN", Cipher.caesar_guess("RLCOPY")
+  end
 
-  # def test_simple_vigenere_cipher_with_one_word
-  #   keyword     = "RLCOPY"
-  #   input_word  = "IONDVQY"
-  #   #assert_equal "COWARDS", Cipher.vigenere(keyword, input_word)
-  # end
+  def test_simple_vigenere_cipher_with_one_word
+    keyword     = "RLCOPY"
+    input_word  = "IONDVQY"
+    assert_equal "COWARDS", Cipher.vigenere(keyword, input_word)
+  end
 
   def test_simple_vigenere_cipher
     #puts "working on test vignere simple\n\n"
     keyword, text = @simple_cipher.split("\n\n")
     Cipher.vigenere(keyword, text)
-    #assert_equal @simple_output, Cipher.vigenere(keyword, text)
+    assert_equal @simple_output, Cipher.vigenere(keyword, text)
   end
 
   def test_complex_vigenere_cipher

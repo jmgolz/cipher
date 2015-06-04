@@ -12,12 +12,12 @@ class CipherTest < MiniTest::Test
     @complex_cipher = File.read(File.dirname(__FILE__) + '/fixtures/complex_cipher.txt')
   end
 
-  # def test_caesar_cipher
-  #   cipher = "FRZDUGV GLH PDQB WLPHV EHIRUH WKHLU GHDWKV; WKH YDOLDQW QHYHU WDVWH RI GHDWK EXW RQFH."
-  #   output = "COWARDS DIE MANY TIMES BEFORE THEIR DEATHS; THE VALIANT NEVER TASTE OF DEATH BUT ONCE."
+  def test_caesar_cipher
+    cipher = "FRZDUGV GLH PDQB WLPHV EHIRUH WKHLU GHDWKV; WKH YDOLDQW QHYHU WDVWH RI GHDWK EXW RQFH."
+    output = "COWARDS DIE MANY TIMES BEFORE THEIR DEATHS; THE VALIANT NEVER TASTE OF DEATH BUT ONCE."
 
-  #   assert_equal output, Cipher.caesar(cipher, 3)
-  # end
+    assert_equal output, Cipher.caesar(cipher, 3)
+  end
 
   # def test_word_is_english
   #   assert Cipher.is_english?("APPLE")
